@@ -14,7 +14,7 @@ model = pickle.load(open('rf_model_water_quality.pkl', 'rb'))
 st.title("Water Quality Predictor")
 st.sidebar.title("Input Features")
 st.sidebar.markdown("Enter the values for the following features:")
-st.image("image_indoor.jpg", use_column_width=True)
+st.image("river_water_quality.jpg", use_column_width=True)
 
 # Input features
 station_name = st.text_input("Station Name")
