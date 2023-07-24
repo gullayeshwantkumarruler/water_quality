@@ -48,7 +48,7 @@ if st.button("Predict"):
     st.header("Prediction")
     st.write(prediction)
     # Display the prediction
-    if (prediction[0] == 1) :
+    if (prediction == 1) or (prediction==0) :
         st.success("The water quality is predicted to be good.")
     else:
         st.error("The water quality is predicted to be poor.")
