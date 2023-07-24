@@ -27,10 +27,10 @@ ph = st.number_input("PH")
 if st.button("Predict"):
     # Create a DataFrame from the user inputs
     input_data = pd.DataFrame({
-        'Station_Name': [station_name],
-        'Primary_Basin': [primary_basin],
-        'Depth': [depth],
-        'PH': [ph]
+        'station_name': [station_name],
+        'primary_basin': [primary_basin],
+        'depth': [depth],
+        'ph': [ph]
     })
 
 # Load the label encoder for 'Station_Name' and 'Primary_Basin' from a saved file
@@ -38,8 +38,8 @@ label_encoder = LabelEncoder()
 # label_encoder.classes_ = np.load('label_encoder_classes.npy', allow_pickle=True)
 
 # Perform label encoding on 'Station_Name' and 'Primary_Basin' columns
-input_data['Station_Name'] = label_encoder.fit_transform(input_data['Station_Name'])
-input_data['Primary_Basin'] = label_encoder.fit_transform(input_data['Primary_Basin'])
+input_data['station_name'] = label_encoder.fit_transform(input_data['station_name'])
+input_data['primary_basin'] = label_encoder.fit_transform(input_data['primary_basin'])
 
 # Make the prediction using the loaded model
 prediction = model.predict(input_data)[0]
