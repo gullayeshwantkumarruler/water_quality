@@ -33,22 +33,22 @@ if st.button("Predict"):
         'ph': [ph]
     })
 
-# Load the label encoder for 'Station_Name' and 'Primary_Basin' from a saved file
-label_encoder = LabelEncoder()
-# label_encoder.classes_ = np.load('label_encoder_classes.npy', allow_pickle=True)
-
-# Perform label encoding on 'Station_Name' and 'Primary_Basin' columns
-input_data['station_name'] = label_encoder.fit_transform(input_data['station_name'])
-input_data['primary_basin'] = label_encoder.fit_transform(input_data['primary_basin'])
-
-# Make the prediction using the loaded model
-prediction = model.predict(input_data)[0]
-
-# Display the predicted risk level
-st.header("Prediction")
-st.write(prediction)
-# Display the prediction
-if (prediction[0] == 1) or (prediction[0]==0):
-    st.success("The water quality is predicted to be good.")
-else:
-    st.error("The water quality is predicted to be poor.")
+    # Load the label encoder for 'Station_Name' and 'Primary_Basin' from a saved file
+    label_encoder = LabelEncoder()
+    # label_encoder.classes_ = np.load('label_encoder_classes.npy', allow_pickle=True)
+    
+    # Perform label encoding on 'Station_Name' and 'Primary_Basin' columns
+    input_data['station_name'] = label_encoder.fit_transform(input_data['station_name'])
+    input_data['primary_basin'] = label_encoder.fit_transform(input_data['primary_basin'])
+    
+    # Make the prediction using the loaded model
+    prediction = model.predict(input_data)[0]
+    
+    # Display the predicted risk level
+    st.header("Prediction")
+    st.write(prediction)
+    # Display the prediction
+    if (prediction[0] == 1) or (prediction[0]==0):
+        st.success("The water quality is predicted to be good.")
+    else:
+        st.error("The water quality is predicted to be poor.")
