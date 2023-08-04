@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 import pickle
 
 # Load the trained model from a pickle file
-model = pickle.load(open('gb_model_water_quality.pkl', 'rb'))
+model = pickle.load(open('rf_model_water_quality.pkl', 'rb'))
 
 # Streamlit app
 st.title("Water Quality Predictor")
