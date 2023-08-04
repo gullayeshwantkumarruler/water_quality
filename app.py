@@ -49,7 +49,7 @@ if st.button("Predict"):
     st.header("Prediction")
     st.write(prediction)
     # Display the prediction
-    if (prediction >= 6.5) and (prediction<=8.5) :
+    if (prediction >= 7.76) and (prediction<=9.0) :
         st.success("The water quality is predicted to be Good.")
     else:
         st.error("The water quality is predicted to be Bad.")
